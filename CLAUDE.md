@@ -117,3 +117,55 @@ Always use these aliases instead of relative imports for better maintainability.
 ### Environment Variables
 
 Copy `.env.example` to `.env` for local development. The example file shows all required environment variables.
+
+## Code Documentation Standards
+
+### JSDoc Requirements
+
+All exported functions, custom hooks, and components must include JSDoc comments with the following structure:
+
+**Custom Hooks:**
+```typescript
+/**
+ * Custom hook description
+ * @param {Object} options - Hook options
+ * @param {string} options.paramName - Parameter description
+ * @returns {Object} Return value description
+ * @example
+ * const { value, setValue } = useExample({ paramName: 'value' });
+ */
+```
+
+**Utility Functions:**
+```typescript
+/**
+ * Function description
+ * @param {Type} paramName - Parameter description
+ * @returns {Type} Return value description
+ */
+```
+
+**React Components:**
+```typescript
+/**
+ * Component description
+ * @param {Object} props - Component props
+ * @param {Type} props.propName - Prop description
+ */
+```
+
+### JSDoc Best Practices
+
+1. **Always include**:
+   - Clear description of purpose
+   - All parameters with types and descriptions
+   - Return value with type and description
+   - `@example` tag for complex hooks or functions
+
+2. **Optional but recommended**:
+   - `@throws` for functions that can throw errors
+   - `@see` for related functions or components
+   - `@deprecated` for deprecated code
+
+3. **Keep descriptions concise** but informative
+4. **Use TypeScript types** in JSDoc for better IDE support
