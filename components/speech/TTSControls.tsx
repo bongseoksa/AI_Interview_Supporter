@@ -1,3 +1,9 @@
+/**
+ * @file 음성 합성(TTS) 제어를 위한 버튼 컴포넌트
+ *
+ * 텍스트를 음성으로 재생하거나 중지하는 버튼을 제공하며,
+ * 브라우저의 Web Speech API 지원 여부에 따라 적절한 UI를 표시합니다.
+ */
 "use client";
 
 import { Button } from "@/components/ui/button";

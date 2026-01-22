@@ -1,3 +1,9 @@
+/**
+ * @file 음성 인식(STT) 제어를 위한 버튼 컴포넌트
+ *
+ * 음성 인식 시작, 종료, 초기화 버튼을 제공하며,
+ * 브라우저의 Web Speech API 지원 여부에 따라 적절한 UI를 표시합니다.
+ */
 "use client";
 
 import { Button } from "@/components/ui/button";

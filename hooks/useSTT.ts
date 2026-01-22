@@ -1,3 +1,9 @@
+/**
+ * @file 음성 인식(STT) 기능을 제공하는 커스텀 훅
+ *
+ * Web Speech API의 SpeechRecognition을 사용하여 사용자의 음성을 실시간으로 텍스트로 변환합니다.
+ * 브라우저 호환성 확인, 인식 상태 관리, 에러 처리 등의 기능을 포함합니다.
+ */
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";

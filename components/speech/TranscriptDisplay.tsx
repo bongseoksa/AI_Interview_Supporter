@@ -1,3 +1,9 @@
+/**
+ * @file 음성 인식 결과를 화면에 표시하는 컴포넌트
+ *
+ * 음성 인식(STT)으로 변환된 텍스트를 실시간으로 표시하며,
+ * 음성 인식 진행 상태(대기 중, 인식 중)를 시각적으로 나타냅니다.
+ */
 "use client";
 
 interface TranscriptDisplayProps {

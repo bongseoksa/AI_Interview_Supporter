@@ -1,4 +1,11 @@
 /**
+ * @file 브라우저 감지 및 Web Speech API 지원 확인 유틸리티
+ *
+ * 현재 사용 중인 브라우저의 종류를 확인하고,
+ * Web Speech API(음성 인식 및 음성 합성) 지원 여부를 체크하는 함수들을 제공합니다.
+ */
+
+/**
  * 현재 브라우저가 Firefox인지 확인합니다.
  *
  * @returns {boolean} Firefox 브라우저인 경우 true, 아니면 false

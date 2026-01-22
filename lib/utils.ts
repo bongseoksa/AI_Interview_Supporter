@@ -1,3 +1,10 @@
+/**
+ * @file Tailwind CSS 클래스 병합 유틸리티
+ *
+ * clsx와 tailwind-merge를 결합하여 조건부 클래스 결합 및
+ * 중복 클래스 제거 기능을 제공합니다.
+ */
+
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 

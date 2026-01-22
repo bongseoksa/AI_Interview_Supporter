@@ -1,3 +1,9 @@
+/**
+ * @file 음성 합성(TTS) 기능을 제공하는 커스텀 훅
+ *
+ * Web Speech API의 SpeechSynthesis를 사용하여 텍스트를 음성으로 변환합니다.
+ * 자동 언어 감지, 음성 선택, 재생 제어 등의 기능을 포함합니다.
+ */
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
