@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "title": "AI Interview Supporter",
+    "description": "AI-powered Interview Support System"
+  },
+  "home": {
+    "title": "AI Interview Supporter",
+    "description": "AI-powered Interview Support System",
+    "sttTestButton": "STT/TTS PoC Test",
+    "sttTestDescription": "Test the speech recognition and text-to-speech features"
+  },
+  "speech": {
+    "page": {
+      "backToMain": "Back to Main",
+      "title": "STT/TTS PoC",
+      "description": "Speech recognition and synthesis test using Web Speech API",
+      "errorOccurred": "Error occurred:",
+      "sttSectionTitle": "Speech Recognition (STT)",
+      "ttsSectionTitle": "Text-to-Speech (TTS)",
+      "voiceLabel": "Select Voice",
+      "voiceAuto": "(Auto)",
+      "voiceSelected": "({name})",
+      "needTranscript": "Please input text via speech recognition before playback",
+      "usageGuide": {
+        "title": "Usage Guide",
+        "item1": "Click the 'Start Recognition' button to begin speech recognition",
+        "item2": "Recognized text will be displayed in real-time on the screen",
+        "item3": "Click the 'Stop Recognition' button to stop speech recognition",
+        "item4": "Click the 'Play Text' button to hear the recognized text as speech",
+        "item5": "Use the 'Reset' button to clear the recognized text"
+      }
+    },
+    "stt": {
+      "startButton": "Start Recognition",
+      "stopButton": "Stop Recognition",
+      "resetButton": "Reset",
+      "notSupported": "This browser does not support speech recognition."
+    },
+    "tts": {
+      "speakButton": "Play Text",
+      "stopButton": "Stop Playing",
+      "notSupported": "This browser does not support text-to-speech."
+    },
+    "transcript": {
+      "listening": "Listening...",
+      "pleaseSpeak": "Please speak...",
+      "pressStart": "Press the start button to begin speech recognition"
+    },
+    "voiceSelector": {
+      "placeholder": "Select Voice",
+      "auto": "Auto Select",
+      "korean": "Korean",
+      "english": "English",
+      "other": "Other Languages"
+    },
+    "browserWarning": {
+      "title": "Browser Support Notice",
+      "firefoxNotSupported": "Firefox browser does not properly support the Web Speech API.",
+      "useBrowsersBelow": "Please use one of the following browsers:"
+    }
+  }
+}

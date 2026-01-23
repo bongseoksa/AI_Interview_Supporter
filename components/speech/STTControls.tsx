@@ -8,6 +8,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Mic, MicOff, RotateCcw } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 interface STTControlsProps {
   isListening: boolean;
@@ -26,10 +27,12 @@ export function STTControls({
   onReset,
   disabled = false,
 }: STTControlsProps) {
+  const t = useTranslations('speech.stt');
+
   if (!isSupported) {
     return (
       <div className="text-center text-destructive">
-        이 브라우저는 음성 인식을 지원하지 않습니다.
+        {t('notSupported')}
       </div>
     );
   }
@@ -44,7 +47,7 @@ export function STTControls({
           className="gap-2"
         >
           <Mic className="w-5 h-5" />
-          음성 인식 시작
+          {t('startButton')}
         </Button>
       ) : (
         <Button
@@ -55,7 +58,7 @@ export function STTControls({
           className="gap-2"
         >
           <MicOff className="w-5 h-5" />
-          음성 인식 종료
+          {t('stopButton')}
         </Button>
       )}
 
@@ -67,7 +70,7 @@ export function STTControls({
         className="gap-2"
       >
         <RotateCcw className="w-5 h-5" />
-        초기화
+        {t('resetButton')}
       </Button>
     </div>
   );

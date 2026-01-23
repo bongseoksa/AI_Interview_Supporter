@@ -11,6 +11,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSTT } from "@/hooks/useSTT";
@@ -21,9 +22,18 @@ import { TranscriptDisplay } from "@/components/speech/TranscriptDisplay";
 import { STTControls } from "@/components/speech/STTControls";
 import { TTSControls } from "@/components/speech/TTSControls";
 import { VoiceSelector } from "@/components/speech/VoiceSelector";
+import { useTranslations } from 'next-intl';
+import { localeToSpeechLang, defaultLocale, type Locale } from "@/i18n/config";
 
 export default function SpeechPage() {
+  const params = useParams();
+  const locale = (params.locale as Locale) || defaultLocale;
+  const t = useTranslations('speech');
+
   const [showWarning, setShowWarning] = useState(false);
+
+  // locale에 따라 음성 인식 언어 설정
+  const speechLang = localeToSpeechLang[locale] || 'ko-KR';
 
   const {
     transcript,
@@ -34,7 +44,7 @@ export default function SpeechPage() {
     stopListening,
     resetTranscript,
   } = useSTT({
-    lang: "ko-KR",
+    lang: speechLang,
   });
 
   const {
@@ -46,7 +56,7 @@ export default function SpeechPage() {
     speak,
     stop,
   } = useTTS({
-    lang: "ko-KR",
+    lang: speechLang,
   });
 
   useEffect(() => {
@@ -63,21 +73,24 @@ export default function SpeechPage() {
 
   const isDisabled = showWarning || (!sttSupported && !ttsSupported);
 
+  // 기본 언어(ko)는 prefix 없이, 다른 언어는 prefix 포함
+  const homeLink = locale === defaultLocale ? '/' : `/${locale}`;
+
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="space-y-2">
-            <Link href="/">
+            <Link href={homeLink}>
               <Button variant="ghost" className="gap-2 -ml-4">
                 <ArrowLeft className="w-4 h-4" />
-                메인으로
+                {t('page.backToMain')}
               </Button>
             </Link>
-            <h1 className="text-4xl font-bold">STT/TTS PoC</h1>
+            <h1 className="text-4xl font-bold">{t('page.title')}</h1>
             <p className="text-muted-foreground">
-              Web Speech API를 활용한 음성 인식 및 음성 합성 테스트
+              {t('page.description')}
             </p>
           </div>
         </div>
@@ -85,7 +98,7 @@ export default function SpeechPage() {
         {/* Error Display */}
         {sttError && (
           <div className="bg-destructive/10 border border-destructive text-destructive px-4 py-3 rounded-lg">
-            <p className="font-semibold">오류 발생:</p>
+            <p className="font-semibold">{t('page.errorOccurred')}</p>
             <p>{sttError}</p>
           </div>
         )}
@@ -95,7 +108,7 @@ export default function SpeechPage() {
 
         {/* STT Controls */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-center">음성 인식 (STT)</h2>
+          <h2 className="text-xl font-semibold text-center">{t('page.sttSectionTitle')}</h2>
           <STTControls
             isListening={isListening}
             isSupported={sttSupported}
@@ -109,13 +122,13 @@ export default function SpeechPage() {
         {/* TTS Controls */}
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-center">
-            음성 합성 (TTS)
+            {t('page.ttsSectionTitle')}
           </h2>
 
           {/* Voice Selector */}
           <div className="flex flex-col items-center gap-2">
             <label className="text-sm text-muted-foreground">
-              음성 선택 {selectedVoice ? `(${selectedVoice.name})` : "(자동)"}
+              {t('page.voiceLabel')} {selectedVoice ? t('page.voiceSelected', { name: selectedVoice.name }) : t('page.voiceAuto')}
             </label>
             <VoiceSelector
               voices={voices}
@@ -134,27 +147,20 @@ export default function SpeechPage() {
           />
           {!transcript && (
             <p className="text-center text-sm text-muted-foreground">
-              음성 인식으로 텍스트를 입력한 후 재생할 수 있습니다
+              {t('page.needTranscript')}
             </p>
           )}
         </div>
 
         {/* Info */}
         <div className="bg-muted/50 rounded-lg p-6 space-y-2">
-          <h3 className="font-semibold">사용 안내</h3>
+          <h3 className="font-semibold">{t('page.usageGuide.title')}</h3>
           <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-            <li>
-              &apos;음성 인식 시작&apos; 버튼을 클릭하여 음성 인식을 시작합니다
-            </li>
-            <li>인식된 텍스트는 실시간으로 화면에 표시됩니다</li>
-            <li>
-              &apos;음성 인식 종료&apos; 버튼을 클릭하여 음성 인식을 중지합니다
-            </li>
-            <li>
-              &apos;텍스트 음성 재생&apos; 버튼을 클릭하여 인식된 텍스트를 음성으로
-              들을 수 있습니다
-            </li>
-            <li>&apos;초기화&apos; 버튼으로 인식된 텍스트를 지울 수 있습니다</li>
+            <li>{t('page.usageGuide.item1')}</li>
+            <li>{t('page.usageGuide.item2')}</li>
+            <li>{t('page.usageGuide.item3')}</li>
+            <li>{t('page.usageGuide.item4')}</li>
+            <li>{t('page.usageGuide.item5')}</li>
           </ul>
         </div>
       </div>

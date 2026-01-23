@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "title": "AI Interview Supporter",
+    "description": "AI 기반 면접 지원 시스템"
+  },
+  "home": {
+    "title": "AI Interview Supporter",
+    "description": "AI 기반 면접 지원 시스템",
+    "sttTestButton": "STT/TTS PoC 테스트",
+    "sttTestDescription": "음성 인식 및 음성 합성 기능을 테스트해보세요"
+  },
+  "speech": {
+    "page": {
+      "backToMain": "메인으로",
+      "title": "STT/TTS PoC",
+      "description": "Web Speech API를 활용한 음성 인식 및 음성 합성 테스트",
+      "errorOccurred": "오류 발생:",
+      "sttSectionTitle": "음성 인식 (STT)",
+      "ttsSectionTitle": "음성 합성 (TTS)",
+      "voiceLabel": "음성 선택",
+      "voiceAuto": "(자동)",
+      "voiceSelected": "({name})",
+      "needTranscript": "음성 인식으로 텍스트를 입력한 후 재생할 수 있습니다",
+      "usageGuide": {
+        "title": "사용 안내",
+        "item1": "'음성 인식 시작' 버튼을 클릭하여 음성 인식을 시작합니다",
+        "item2": "인식된 텍스트는 실시간으로 화면에 표시됩니다",
+        "item3": "'음성 인식 종료' 버튼을 클릭하여 음성 인식을 중지합니다",
+        "item4": "'텍스트 음성 재생' 버튼을 클릭하여 인식된 텍스트를 음성으로 들을 수 있습니다",
+        "item5": "'초기화' 버튼으로 인식된 텍스트를 지울 수 있습니다"
+      }
+    },
+    "stt": {
+      "startButton": "음성 인식 시작",
+      "stopButton": "음성 인식 종료",
+      "resetButton": "초기화",
+      "notSupported": "이 브라우저는 음성 인식을 지원하지 않습니다."
+    },
+    "tts": {
+      "speakButton": "텍스트 음성 재생",
+      "stopButton": "재생 중지",
+      "notSupported": "이 브라우저는 음성 합성을 지원하지 않습니다."
+    },
+    "transcript": {
+      "listening": "음성 인식 중...",
+      "pleaseSpeak": "말씀해 주세요...",
+      "pressStart": "음성 인식을 시작하려면 시작 버튼을 눌러주세요"
+    },
+    "voiceSelector": {
+      "placeholder": "음성 선택",
+      "auto": "자동 선택",
+      "korean": "한국어",
+      "english": "영어",
+      "other": "기타 언어"
+    },
+    "browserWarning": {
+      "title": "브라우저 지원 안내",
+      "firefoxNotSupported": "Firefox 브라우저는 Web Speech API를 제대로 지원하지 않습니다.",
+      "useBrowsersBelow": "다음 브라우저 중 하나를 사용해주세요:"
+    }
+  }
+}

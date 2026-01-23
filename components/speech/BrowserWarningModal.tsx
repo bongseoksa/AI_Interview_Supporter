@@ -13,6 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useTranslations } from 'next-intl';
 
 interface BrowserWarningModalProps {
   open: boolean;
@@ -23,17 +24,19 @@ export function BrowserWarningModal({
   open,
   onOpenChange,
 }: BrowserWarningModalProps) {
+  const t = useTranslations('speech.browserWarning');
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>브라우저 지원 안내</DialogTitle>
+          <DialogTitle>{t('title')}</DialogTitle>
           <DialogDescription className="space-y-4">
             <p>
-              Firefox 브라우저는 Web Speech API를 제대로 지원하지 않습니다.
+              {t('firefoxNotSupported')}
             </p>
             <p className="font-semibold">
-              다음 브라우저 중 하나를 사용해주세요:
+              {t('useBrowsersBelow')}
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li>Google Chrome</li>

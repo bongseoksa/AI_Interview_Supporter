@@ -15,6 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useTranslations } from 'next-intl';
 
 interface VoiceSelectorProps {
   voices: SpeechSynthesisVoice[];
@@ -39,6 +40,8 @@ export function VoiceSelector({
   onVoiceChange,
   disabled = false,
 }: VoiceSelectorProps) {
+  const t = useTranslations('speech.voiceSelector');
+
   // 언어별로 음성 그룹화
   const koreanVoices = voices.filter((v) => v.lang.startsWith("ko"));
   const englishVoices = voices.filter((v) => v.lang.startsWith("en"));
@@ -63,14 +66,14 @@ export function VoiceSelector({
         disabled={disabled}
       >
         <SelectTrigger>
-          <SelectValue placeholder="음성 선택" />
+          <SelectValue placeholder={t('placeholder')} />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="auto">자동 선택</SelectItem>
+          <SelectItem value="auto">{t('auto')}</SelectItem>
 
           {koreanVoices.length > 0 && (
             <SelectGroup>
-              <SelectLabel>한국어</SelectLabel>
+              <SelectLabel>{t('korean')}</SelectLabel>
               {koreanVoices.map((voice) => (
                 <SelectItem key={voice.name} value={voice.name}>
                   {voice.name} ({voice.lang})
@@ -81,7 +84,7 @@ export function VoiceSelector({
 
           {englishVoices.length > 0 && (
             <SelectGroup>
-              <SelectLabel>영어</SelectLabel>
+              <SelectLabel>{t('english')}</SelectLabel>
               {englishVoices.map((voice) => (
                 <SelectItem key={voice.name} value={voice.name}>
                   {voice.name} ({voice.lang})
@@ -92,7 +95,7 @@ export function VoiceSelector({
 
           {otherVoices.length > 0 && (
             <SelectGroup>
-              <SelectLabel>기타 언어</SelectLabel>
+              <SelectLabel>{t('other')}</SelectLabel>
               {otherVoices.map((voice) => (
                 <SelectItem key={voice.name} value={voice.name}>
                   {voice.name} ({voice.lang})

@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "title": "AI Interview Supporter",
+    "description": "AI搭載面接支援システム"
+  },
+  "home": {
+    "title": "AI Interview Supporter",
+    "description": "AI搭載面接支援システム",
+    "sttTestButton": "STT/TTS PoCテスト",
+    "sttTestDescription": "音声認識および音声合成機能をテストしてください"
+  },
+  "speech": {
+    "page": {
+      "backToMain": "メインへ戻る",
+      "title": "STT/TTS PoC",
+      "description": "Web Speech APIを活用した音声認識および音声合成テスト",
+      "errorOccurred": "エラーが発生しました：",
+      "sttSectionTitle": "音声認識 (STT)",
+      "ttsSectionTitle": "音声合成 (TTS)",
+      "voiceLabel": "音声選択",
+      "voiceAuto": "（自動）",
+      "voiceSelected": "({name})",
+      "needTranscript": "再生するには、音声認識でテキストを入力してください",
+      "usageGuide": {
+        "title": "ご利用案内",
+        "item1": "「音声認識開始」ボタンをクリックして音声認識を開始します",
+        "item2": "認識されたテキストはリアルタイムで画面に表示されます",
+        "item3": "「音声認識終了」ボタンをクリックして音声認識を停止します",
+        "item4": "「テキスト音声再生」ボタンをクリックして認識されたテキストを音声で聞くことができます",
+        "item5": "「リセット」ボタンで認識されたテキストを消去できます"
+      }
+    },
+    "stt": {
+      "startButton": "音声認識開始",
+      "stopButton": "音声認識終了",
+      "resetButton": "リセット",
+      "notSupported": "このブラウザは音声認識をサポートしていません。"
+    },
+    "tts": {
+      "speakButton": "テキスト音声再生",
+      "stopButton": "再生停止",
+      "notSupported": "このブラウザは音声合成をサポートしていません。"
+    },
+    "transcript": {
+      "listening": "音声認識中...",
+      "pleaseSpeak": "お話しください...",
+      "pressStart": "開始ボタンを押して音声認識を開始してください"
+    },
+    "voiceSelector": {
+      "placeholder": "音声選択",
+      "auto": "自動選択",
+      "korean": "韓国語",
+      "english": "英語",
+      "other": "その他の言語"
+    },
+    "browserWarning": {
+      "title": "ブラウザサポートのご案内",
+      "firefoxNotSupported": "FirefoxブラウザはWeb Speech APIを正しくサポートしていません。",
+      "useBrowsersBelow": "以下のブラウザをご利用ください："
+    }
+  }
+}

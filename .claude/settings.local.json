@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm add:*)",
+      "Bash(pkill:*)",
+      "Bash(pnpm dev)",
+      "Bash(curl:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/bongseok.sa/Desktop/workspace/personal/AI_Interview_Supporter/i18n"
+    ]
+  }
+}

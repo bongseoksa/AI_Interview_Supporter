@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "title": "AI Interview Supporter",
+    "description": "AI驱动的面试支持系统"
+  },
+  "home": {
+    "title": "AI Interview Supporter",
+    "description": "AI驱动的面试支持系统",
+    "sttTestButton": "STT/TTS PoC测试",
+    "sttTestDescription": "请测试语音识别和语音合成功能"
+  },
+  "speech": {
+    "page": {
+      "backToMain": "返回主页",
+      "title": "STT/TTS PoC",
+      "description": "使用Web Speech API进行语音识别和语音合成测试",
+      "errorOccurred": "发生错误：",
+      "sttSectionTitle": "语音识别 (STT)",
+      "ttsSectionTitle": "语音合成 (TTS)",
+      "voiceLabel": "选择语音",
+      "voiceAuto": "（自动）",
+      "voiceSelected": "({name})",
+      "needTranscript": "请先通过语音识别输入文本后再进行播放",
+      "usageGuide": {
+        "title": "使用指南",
+        "item1": "点击「开始识别」按钮开始语音识别",
+        "item2": "识别的文本将实时显示在屏幕上",
+        "item3": "点击「停止识别」按钮停止语音识别",
+        "item4": "点击「播放文本」按钮可以听到识别的文本语音",
+        "item5": "使用「重置」按钮可以清除识别的文本"
+      }
+    },
+    "stt": {
+      "startButton": "开始识别",
+      "stopButton": "停止识别",
+      "resetButton": "重置",
+      "notSupported": "此浏览器不支持语音识别。"
+    },
+    "tts": {
+      "speakButton": "播放文本",
+      "stopButton": "停止播放",
+      "notSupported": "此浏览器不支持语音合成。"
+    },
+    "transcript": {
+      "listening": "正在识别...",
+      "pleaseSpeak": "请讲话...",
+      "pressStart": "请按开始按钮开始语音识别"
+    },
+    "voiceSelector": {
+      "placeholder": "选择语音",
+      "auto": "自动选择",
+      "korean": "韩语",
+      "english": "英语",
+      "other": "其他语言"
+    },
+    "browserWarning": {
+      "title": "浏览器支持说明",
+      "firefoxNotSupported": "Firefox浏览器不能正确支持Web Speech API。",
+      "useBrowsersBelow": "请使用以下浏览器之一："
+    }
+  }
+}

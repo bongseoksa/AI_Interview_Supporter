@@ -8,6 +8,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Volume2, VolumeX } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 interface TTSControlsProps {
   isSpeaking: boolean;
@@ -24,10 +25,12 @@ export function TTSControls({
   onStop,
   disabled = false,
 }: TTSControlsProps) {
+  const t = useTranslations('speech.tts');
+
   if (!isSupported) {
     return (
       <div className="text-center text-destructive">
-        이 브라우저는 음성 합성을 지원하지 않습니다.
+        {t('notSupported')}
       </div>
     );
   }
@@ -43,7 +46,7 @@ export function TTSControls({
           className="gap-2"
         >
           <Volume2 className="w-5 h-5" />
-          텍스트 음성 재생
+          {t('speakButton')}
         </Button>
       ) : (
         <Button
@@ -54,7 +57,7 @@ export function TTSControls({
           className="gap-2"
         >
           <VolumeX className="w-5 h-5" />
-          재생 중지
+          {t('stopButton')}
         </Button>
       )}
     </div>

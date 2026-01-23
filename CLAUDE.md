@@ -169,3 +169,106 @@ All exported functions, custom hooks, and components must include JSDoc comments
 
 3. **Keep descriptions concise** but informative
 4. **Use TypeScript types** in JSDoc for better IDE support
+
+## Internationalization (i18n)
+
+This project uses **next-intl** for internationalization support.
+
+### Supported Languages
+
+- **ko** (한국어) - Default language
+- **en** (English)
+- **ja** (日本語)
+- **zh** (简体中文)
+
+### i18n Directory Structure
+
+```
+/i18n
+├── config.ts       # Locale configuration
+└── request.ts      # Server-side i18n setup
+
+/messages
+├── ko.json         # Korean translations (base)
+├── en.json         # English translations
+├── ja.json         # Japanese translations
+└── zh.json         # Chinese translations
+```
+
+### URL Structure
+
+- `/` - Korean (default, no prefix)
+- `/en` - English
+- `/ja` - Japanese
+- `/zh` - Chinese
+
+### Translation Rules
+
+1. **Base Language**: Korean (ko) is the base language for all translations
+2. **Translation Style**: Other languages should use formal/written style (문어체)
+   - English: Formal expressions
+   - Japanese: です/ます体 (polite form)
+   - Chinese: Formal expressions
+
+3. **Variable Interpolation**: Use next-intl's variable feature
+   ```json
+   {
+     "welcome": "{name}님, 환영합니다"
+   }
+   ```
+   ```typescript
+   t('welcome', { name: 'John' })
+   ```
+
+4. **Rich Text**: Use next-intl's rich feature for styled text
+   ```json
+   {
+     "description": "This is <b>important</b> message"
+   }
+   ```
+   ```typescript
+   t.rich('description', {
+     b: (chunks) => <b>{chunks}</b>
+   })
+   ```
+
+### Using Translations
+
+**Server Components:**
+```typescript
+import { getTranslations } from 'next-intl/server';
+
+const t = await getTranslations({ locale, namespace: 'home' });
+```
+
+**Client Components:**
+```typescript
+import { useTranslations } from 'next-intl';
+
+const t = useTranslations('speech.stt');
+```
+
+### Adding New Translations
+
+1. Add the key to `messages/ko.json` first
+2. Add corresponding translations to `en.json`, `ja.json`, `zh.json`
+3. Use the translation key in your component with `t()` or `t.rich()`
+
+### Translation Key Naming Convention
+
+```json
+{
+  "metadata": { ... },
+  "home": { ... },
+  "speech": {
+    "page": { ... },
+    "stt": { ... },
+    "tts": { ... },
+    "transcript": { ... },
+    "voiceSelector": { ... },
+    "browserWarning": { ... }
+  }
+}
+```
+
+Use dot notation for nested keys: `t('speech.page.title')`
