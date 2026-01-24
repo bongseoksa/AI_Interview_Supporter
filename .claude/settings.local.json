@@ -4,7 +4,11 @@
       "Bash(pnpm add:*)",
       "Bash(pkill:*)",
       "Bash(pnpm dev)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(claude mcp add context7 -- npx -y @upstash/context7-mcp@latest)",
+      "Bash(claude mcp list:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs"
     ],
     "additionalDirectories": [
       "/Users/bongseok.sa/Desktop/workspace/personal/AI_Interview_Supporter/i18n"
